@@ -103,7 +103,7 @@ function createDeck() {
             newDeck.push({
                 value,
                 code,
-                image: `Cartas/${suits[code].folder}/${value}${code}.png`
+                image: `cartas/${suits[code].folder.toLowerCase()}/${value}${code.toLowerCase()}.png`
             });
         }
     }
