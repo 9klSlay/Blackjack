@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>9k Blackjack</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="app">
+        <section id="instructions" class="screen active">
+            <div class="panel">
+                <p class="eyebrow">9K BLACKJACK</p>
+                <h1>¿Cómo se juega?</h1>
+                <div class="rules">
+                    <p>♠ Tu objetivo es acercarte a <b>21</b> sin pasarte.</p>
+                    <p>♣ Recibirás dos cartas y el dealer también.</p>
+                    <p>♥ En tu turno puedes <b>Pedir carta</b> o <b>Mantenerte</b>.</p>
+                    <p>♦ Las figuras valen 10 y el As vale 1 u 11.</p>
+                    <p>★ Antes de cada decisión tendrás que resolver un ejercicio matemático.</p>
+                    <p>★ Ganas si tienes una mano mejor que el dealer sin superar 21.</p>
+                </div>
+                <div class="timer">Espera <span id="countdown">10</span> segundos...</div>
+                <button id="understoodBtn" disabled>ENTENDIDO</button>
+            </div>
+        </section>
+
+        <section id="start" class="screen">
+            <div class="panel">
+                <p class="eyebrow">9K BLACKJACK</p>
+                <h1>Listo para jugar</h1>
+                <p>Elige una dificultad y empieza la partida.</p>
+
+                <div class="difficulty-grid">
+                    <button class="difficulty" data-difficulty="facil">
+                        <strong>FÁCIL</strong>
+                        <span>Sin recompensa</span>
+                    </button>
+                    <button class="difficulty" data-difficulty="medio">
+                        <strong>MEDIO</strong>
+                        <span>x1–2 Dulces</span>
+                    </button>
+                    <button class="difficulty" data-difficulty="dificil">
+                        <strong>DIFÍCIL</strong>
+                        <span>x1–4 Décimas</span>
+                    </button>
+                </div>
+
+                <div id="selectedDifficulty">Selecciona una dificultad</div>
+                <button id="playBtn" disabled>JUGAR</button>
+            </div>
+        </section>
+
+        <section id="game" class="screen">
+            <header class="game-header">
+                <div>
+                    <p class="eyebrow">9K BLACKJACK</p>
+                    <h2 id="difficultyTitle">FÁCIL</h2>
+                </div>
+                <div class="score-box">
+                    <span>Tú</span>
+                    <b id="playerScore">0</b>
+                </div>
+            </header>
+
+            <main class="table">
+                <div class="dealer-area">
+                    <h3>DEALER</h3>
+                    <div id="dealerCards" class="cards"></div>
+                    <p>Puntaje: <span id="dealerScore">?</span></p>
+                </div>
+
+                <div class="table-divider">♠ ♣ ♥ ♦</div>
+
+                <div class="player-area">
+                    <h3>TÚ</h3>
+                    <div id="playerCards" class="cards"></div>
+                    <p>Puntaje: <span id="playerScoreTable">0</span></p>
+                </div>
+
+                <div id="message" class="game-message">Tu turno.</div>
+
+                <div class="actions">
+                    <button id="hitBtn">PEDIR CARTA</button>
+                    <button id="standBtn">MANTENERSE</button>
+                </div>
+            </main>
+        </section>
+
+        <section id="mathModal" class="modal">
+            <div class="modal-box">
+                <p class="eyebrow">PRUEBA MATEMÁTICA</p>
+                <h2>Resuelve para continuar</h2>
+                <div id="mathQuestion" class="math-question"></div>
+                <input id="mathAnswer" type="number" autocomplete="off" placeholder="Respuesta">
+                <p id="mathFeedback"></p>
+                <button id="mathSubmit">COMPROBAR</button>
+            </div>
+        </section>
+
+        <section id="result" class="screen">
+            <div class="panel result-panel">
+                <p class="eyebrow">RESULTADO</p>
+                <h1 id="resultTitle">Felicidades</h1>
+                <p id="resultText"></p>
+                <div id="rewardBox" class="reward-box"></div>
+                <button id="againBtn">JUGAR DE NUEVO</button>
+            </div>
+        </section>
+
+        <section id="crateModal" class="modal">
+            <div class="crate-box">
+                <p class="eyebrow">APERTURA DE RECOMPENSA</p>
+                <h2>¿Qué te tocará?</h2>
+                <div class="roulette-window">
+                    <div id="roulette" class="roulette"></div>
+                </div>
+                <div id="crateResult"></div>
+            </div>
+        </section>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
