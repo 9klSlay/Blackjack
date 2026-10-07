@@ -346,7 +346,7 @@ function createDeck() {
             newDeck.push({
                 value,
                 code,
-                image: `Cartas/${suits[code].folder}/${value}${code}.png`
+                image: `cartas/${suits[code].folder}/${value}${code}.png`
             });
         }
     }
@@ -450,7 +450,7 @@ function renderCards(revealDealer = false) {
         const img = document.createElement("img");
 
         if (index === 1 && !revealDealer) {
-            img.src = "Cartas/Back_Black.png";
+            img.src = "cartas/back_black.png";
         } else {
             img.src = card.image;
         }
