@@ -9,7 +9,7 @@ const difficulties = {
     facil: { name: "FÁCIL", mathTime: 0 },
     medio: { name: "MEDIO", mathTime: 30 },
     dificil: { name: "DIFÍCIL", mathTime: 45 },
-    extrema: { name: "EXTREMA", mathTime: 60 }
+    extrema: { name: "EXTREMA", mathTime: 150 }
 };
 
 let selectedDifficulty = null;
